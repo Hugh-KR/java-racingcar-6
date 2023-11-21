@@ -20,8 +20,4 @@ public class Round {
     public void decreaseCount() {
         this.count--;
     }
-
-    public int getCount() {
-        return this.count;
-    }
 }
