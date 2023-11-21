@@ -1,6 +1,7 @@
 package racingcar.domain.car;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import racingcar.domain.car.strategy.ForwardStrategy;
 import racingcar.domain.car.validator.CarsValidator;
@@ -24,6 +25,24 @@ public class Cars {
     public List<CarDto> getStatus() {
         return cars.stream()
                 .map(CarDto::toDto)
+                .toList();
+    }
+
+    public List<String> getWinnerNames() {
+        final int farthestLocation = getFarthestPosition();
+        return cars.stream()
+                .filter(car -> car.isPositionSameWith(farthestLocation))
+                .map(Car::getName)
+                .toList();
+    }
+
+    private int getFarthestPosition() {
+        return Collections.max(this.getCurrentPositions());
+    }
+
+    private List<Integer> getCurrentPositions() {
+        return cars.stream()
+                .map(Car::getPosition)
                 .toList();
     }
 }

@@ -5,6 +5,7 @@ import racingcar.domain.car.Cars;
 import racingcar.domain.car.strategy.ForwardStrategy;
 import racingcar.domain.round.Round;
 import racingcar.dto.CarDto;
+import racingcar.dto.RoundDto;
 
 public class GameService {
 
@@ -37,6 +38,14 @@ public class GameService {
 
     public List<CarDto> getCurrentStatus() {
         return cars.getStatus();
+    }
+
+    public List<String> getWinnerNames() {
+        return cars.getWinnerNames();
+    }
+
+    public RoundDto getCurrentRound() {
+        return new RoundDto(round);
     }
 }
 

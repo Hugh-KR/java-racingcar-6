@@ -1,8 +1,8 @@
 package racingcar.view;
 
 import java.util.List;
-import racingcar.domain.car.Car;
 import racingcar.dto.CarDto;
+import racingcar.utils.Delimiter;
 
 public class OutputView {
 
@@ -18,5 +18,9 @@ public class OutputView {
                 .map(CarDto::toString)
                 .forEach(System.out::println);
         System.out.println();
+    }
+
+    public void printWinners(final List<String> winnerNames) {
+        System.out.println(PRINT_WINNER_MESSAGE + Delimiter.joinWithComma(winnerNames));
     }
 }

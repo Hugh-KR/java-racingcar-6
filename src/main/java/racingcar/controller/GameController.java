@@ -38,6 +38,7 @@ public class GameController {
     public void playGame() {
         announceStatusTitle();
         announcePlayStatus();
+        announceWinners();
     }
 
     private void announceStatusTitle() {
@@ -49,5 +50,10 @@ public class GameController {
             gameService.playRound();
             outputView.printCarStatus(gameService.getCurrentStatus());
         }
+    }
+
+    private void announceWinners() {
+        final List<String> winnerNames = gameService.getWinnerNames();
+        outputView.printWinners(winnerNames);
     }
 }

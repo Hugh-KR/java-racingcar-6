@@ -1,5 +1,7 @@
 package racingcar.utils;
 
+import java.util.List;
+
 public enum Delimiter {
 
     COMMA(","),
@@ -13,8 +15,8 @@ public enum Delimiter {
         this.unit = unit;
     }
 
-    public static String[] splitWithComma(final String targetString) {
-        return targetString.split(COMMA.unit);
+    public static String[] splitWithComma(final String target) {
+        return target.split(COMMA.unit);
     }
 
     public static String concatWithColon(final String preString, final String postString) {
@@ -24,5 +26,9 @@ public enum Delimiter {
 
     public static String repeatUnderBar(final int count) {
         return BAR.unit.repeat(count);
+    }
+
+    public static String joinWithComma(final List<String> target) {
+        return String.join(COMMA.unit + SPACE.unit, target);
     }
 }
