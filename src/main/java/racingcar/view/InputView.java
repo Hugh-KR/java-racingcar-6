@@ -3,7 +3,6 @@ package racingcar.view;
 import java.util.Arrays;
 import java.util.List;
 import racingcar.exception.CustomIllegalArgumentException;
-import racingcar.exception.ExceptionStatus;
 import racingcar.exception.round.RoundCountExceptionStatus;
 import racingcar.utils.Delimiter;
 import racingcar.view.reader.Reader;

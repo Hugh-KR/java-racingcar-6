@@ -16,5 +16,4 @@ public class RandomForwardStrategy implements ForwardStrategy {
     private int generateRandomNumber() {
         return Randoms.pickNumberInRange(RANDOM_NUMBER_START, RANDOM_NUMBER_END);
     }
-
 }
