@@ -4,6 +4,8 @@ import racingcar.domain.round.validator.RoundValidator;
 
 public class Round {
 
+    private static final int GAME_FINISHED_CONDITION = 0;
+
     private int count;
 
     public Round(final int count) {
@@ -11,6 +13,13 @@ public class Round {
         this.count = count;
     }
 
+    public boolean isNotFinished() {
+        return this.count != GAME_FINISHED_CONDITION;
+    }
+
+    public void decreaseCount() {
+        this.count--;
+    }
 
     public int getCount() {
         return this.count;

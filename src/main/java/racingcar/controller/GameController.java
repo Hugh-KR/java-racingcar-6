@@ -34,4 +34,20 @@ public class GameController {
         final int round = inputView.readRound();
         gameService.initRound(round);
     }
+
+    public void playGame() {
+        announceStatusTitle();
+        announcePlayStatus();
+    }
+
+    private void announceStatusTitle() {
+        outputView.printStatusTitle();
+    }
+
+    private void announcePlayStatus() {
+        while (gameService.isContinuable()) {
+            gameService.playRound();
+            outputView.printCarStatus(gameService.getCurrentStatus());
+        }
+    }
 }
