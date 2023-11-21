@@ -2,6 +2,9 @@ package racingcar.view;
 
 import java.util.Arrays;
 import java.util.List;
+import racingcar.exception.CustomIllegalArgumentException;
+import racingcar.exception.ExceptionStatus;
+import racingcar.exception.round.RoundCountExceptionStatus;
 import racingcar.utils.Delimiter;
 import racingcar.view.reader.Reader;
 
@@ -27,7 +30,16 @@ public class InputView {
                 .toList();
     }
 
+    public int readRound() {
+        System.out.println(PRINT_READ_ROUND_MESSAGE);
+        return parseRound(reader.readLine());
+    }
 
-
-
+    private int parseRound(final String round) {
+        try {
+            return Integer.parseInt(round.trim());
+        } catch (NumberFormatException e) {
+            throw new CustomIllegalArgumentException(RoundCountExceptionStatus.ROUND_IS_NOT_NUMERIC);
+        }
+    }
 }

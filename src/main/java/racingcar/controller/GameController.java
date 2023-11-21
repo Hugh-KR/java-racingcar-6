@@ -31,5 +31,7 @@ public class GameController {
     }
 
     private void initRound() {
+        final int round = inputView.readRound();
+        gameService.initRound(round);
     }
 }
