@@ -7,8 +7,8 @@ import racingcar.exception.car.CarNameExceptionStatus;
 
 public class CarsValidator {
 
-    private static final int ALLOWED_MAXIMUM_COUNT = 0;
     private static final CarsValidator CARS_VALIDATOR = new CarsValidator();
+    private static final int ALLOWED_MAXIMUM_COUNT = 1;
 
     private CarsValidator() {
     }
