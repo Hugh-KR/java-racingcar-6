@@ -7,7 +7,7 @@ import racingcar.view.reader.Reader;
 
 public class InputView {
 
-    private static final String PRINT_READ_CAR_NAME_MESSAGE =
+    private static final String PRINT_READ_CAR_NAMES_MESSAGE =
             "경주할 자동차 이름을 입력하세요.(이름은 쉼표(,) 기준으로 구분)";
 
 
@@ -17,13 +17,13 @@ public class InputView {
         this.reader = reader;
     }
 
-    public List<String> readCarName() {
-        System.out.println(PRINT_READ_CAR_NAME_MESSAGE);
-        return parseCarName(reader.readLine());
+    public List<String> readCarNames() {
+        System.out.println(PRINT_READ_CAR_NAMES_MESSAGE);
+        return parseCarNames(reader.readLine());
     }
 
-    private List<String> parseCarName(final String carName) {
-        return Arrays.stream(Delimiter.splitWithComma(carName))
+    private List<String> parseCarNames(final String carNames) {
+        return Arrays.stream(Delimiter.splitWithComma(carNames))
                 .map(String::trim)
                 .toList();
     }
