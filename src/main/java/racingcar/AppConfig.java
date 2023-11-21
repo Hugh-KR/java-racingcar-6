@@ -10,7 +10,6 @@ public class AppConfig {
 
     public final Reader reader;
     public final InputView inputView;
-    public final OutputView outputView;
 
     private AppConfig() {
         this.reader = initReader();
