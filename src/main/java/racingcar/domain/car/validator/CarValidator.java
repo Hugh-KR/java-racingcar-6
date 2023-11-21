@@ -1,7 +1,5 @@
 package racingcar.domain.car.validator;
 
-import java.util.Collections;
-import java.util.List;
 import racingcar.constant.exception.CustomIllegalArgumentException;
 import racingcar.constant.exception.car.CarNameExceptionStatus;
 
@@ -15,10 +13,33 @@ public class CarValidator {
     }
 
     public static void validateCarName(final String carName) {
-        CAR_VALIDATOR.carNameIsExceededLength(carName);
+        CAR_VALIDATOR.validateCarNameIsNull(carName);
+        CAR_VALIDATOR.validateCarNameIsBlank(carName);
+        CAR_VALIDATOR.validateCarNameIsExceededLength(carName);
     }
 
-    private void carNameIsExceededLength(final String carName) {
+    private void validateCarNameIsNull(final String carName) {
+        if (isNull(carName)) {
+            throw new CustomIllegalArgumentException(CarNameExceptionStatus.CAR_NAME_IS_NULL);
+        }
+    }
+
+    private boolean isNull(final String carName) {
+        return carName == null;
+    }
+
+    private void validateCarNameIsBlank(final String carName) {
+        if (isBlank(carName)) {
+            throw new CustomIllegalArgumentException(CarNameExceptionStatus.CAR_NAME_IS_BLANK);
+        }
+    }
+
+    private boolean isBlank(final String carName) {
+        return carName.isEmpty() || carName.isBlank();
+    }
+
+
+    private void validateCarNameIsExceededLength(final String carName) {
         if (isExceededLength(carName)) {
             throw new CustomIllegalArgumentException(CarNameExceptionStatus.CAR_NAME_IS_EXCEEDED_LENGTH);
         }

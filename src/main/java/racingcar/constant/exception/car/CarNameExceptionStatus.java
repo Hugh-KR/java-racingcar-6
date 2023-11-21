@@ -4,6 +4,8 @@ import racingcar.constant.exception.ExceptionStatus;
 
 public enum CarNameExceptionStatus implements ExceptionStatus {
 
+    CAR_NAME_IS_NULL("NULL이 될 수 없습니다."),
+    CAR_NAME_IS_BLANK("공백이 될 수 없습니다."),
     CAR_NAME_IS_DUPLICATED("중복될 수 없습니다."),
     CAR_NAME_IS_EXCEEDED_LENGTH("다섯자 이하만 가능합니다.");
 
