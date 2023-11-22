@@ -52,7 +52,7 @@ public class GameController {
     }
 
     private void announceWinners() {
-        final List<String> winnerNames = gameService.getWinnerNames();
+        final List<String> winnerNames = gameService.getWinnerCarNames();
         outputView.printWinners(winnerNames);
     }
 }

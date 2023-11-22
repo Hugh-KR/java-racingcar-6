@@ -28,7 +28,7 @@ public class Cars {
                 .toList();
     }
 
-    public List<String> getWinnerNames() {
+    public List<String> getWinnerCarNames() {
         final int farthestLocation = getFarthestPosition();
         return cars.stream()
                 .filter(car -> car.isPositionSameWith(farthestLocation))

@@ -39,8 +39,8 @@ public class GameService {
         return cars.getStatus();
     }
 
-    public List<String> getWinnerNames() {
-        return cars.getWinnerNames();
+    public List<String> getWinnerCarNames() {
+        return cars.getWinnerCarNames();
     }
 }
 
